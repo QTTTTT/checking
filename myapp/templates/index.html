@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>首页</title>
+    <link href="{% static 'css/css.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body background="{% static 'images/1.jpg' %}">
+
+<div class="bodymain">
+
+    <span class="title"> <h1 align="center">签 到 首 页</h1> </span>
+
+
+    <div class="dbtn">
+        <button type="submit" class="btn btn-default"><a href="{% url 'signup' %}">签到</a></button>
+        <button type="submit" class="btn btn-default"><a href="{% url 'signdown' %}">签离</a></button>
+        <button type="submit" class="btn btn-default"><a href="{% url 'query' %}">查询</a></button>
+        <button type="submit" class="btn btn-default"><a href="{% url 'login' %}">管理员登录</a></button>
+
+    </div>
+
+
+
+</div>
+</body>
+</html>

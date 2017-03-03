@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>出勤明细</title>
+    <link href="{% static 'css/css.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body background="{% static 'images/1.jpg' %}">
+<div class="bodymain1">
+    <span class="title"> <h1 align="center">本月出勤明细</h1> </span>
+
+    <div class="tablecontainer" align="center" style="position:relation; height:400px; overflow:auto;overflow :yes">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>日 期</th>
+                <th>第一次签到时间</th>
+                <th>第二次签到时间</th>
+                <th>是否缺勤</th>
+                <th>是否迟到</th>
+                <th>是否早退</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user_object in user_objects %}
+                <tr>
+                    <td>{{ user_object.date }} </td>
+                    {% if user_object.up %}
+                        <td>{{ user_object.record.first_time }}</td>
+                        <td>{{ user_object.record.second_time }}</td>
+                        <td>否</td>
+                        <td>{% if user_object.record.first_result %}是{% else %}否{% endif %}</td>
+                        <td>{% if user_object.record.second_result %}是{% else %}否{% endif %}</td>
+                    {% else %}
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>是</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

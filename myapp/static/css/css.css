@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:Microsoft Yahei;
+	background:"1.jpg";
+}
+h1{
+	font-weight:normal;
+	font-size:170%;
+}
+.table {
+	font-weight:normal;
+	margin-left:25px;
+	margin-right:25px;
+	border: thin solid gray;
+	border-collapse:collapse;
+
+}
+td, th{
+	font-weight:normal;
+	text-align:center;
+	border:thin solid gray;
+	padding:10px;
+	padding-left:25px;
+	padding-right:25px;
+}
+th {
+	background-color: #FFC;
+}
+.tablecontainer{
+	padding:10px;
+}
+.bodymain{
+	background:#FFF;
+	border-style:double;
+	padding: 50px;
+	padding-top:20px;
+	opacity: 1;
+	vertical-align: middle;
+	width: 300px;
+	height: 300px;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin:auto;
+	margin-top:90px;
+	opacity:0.9;
+    filter:alpha(opacity=90);
+}
+.bodymain1{
+	background-color:#FFF;
+	border-style:double;
+	margin-left:20%;
+	margin-right:20%;
+	opacity:0.9;
+    filter:alpha(opacity=90);
+	height: 630px;
+}
+.title{
+	padding:30px;
+}
+
+.btn-default{
+	width:150px;
+	height: 35px;
+	margin-top: 40px;
+	font-size: 16px;
+}
+
+.btn{
+	background-color: #CCC;
+	border: 1px solid transparent;
+	font-weight: 700;
+}
+.btn:hover{
+	background-color: #999;
+	color: #333;
+	border: 1px solid transparent;
+}
+.dbtn{
+	width:310px;
+	margin:auto;
+	font-weight: lighter;}
+.form-control{
+	height:30px;
+	width:300px;
+}
+#numberInput {
+	width:140px;
+	height:20px;
+}
+#searchbtn {
+	width:80px;
+	height:27px;
+}
+input{
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}

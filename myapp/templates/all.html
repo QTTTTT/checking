@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>管理员页面</title>
+    <link href="{% static 'css/css.css' %}" rel="stylesheet" type="text/css"/>
+
+</head>
+<body background="{% static 'images/1.jpg' %}">
+
+
+<div class="bodymain1">
+    <span class="title"> <h1 align="center">本月出勤情况</h1> </span>
+    <div id="search" align="right">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" class="form-control" id="numberInput" placeholder="工号" name="identity"/>
+            <input type="submit" class="btn btn-default" id="searchbtn" value="查询&nbsp;" style="margin-top:0px;"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </form>
+    </div>
+    <br/>
+    <div class="tablecontainer" align="center"style="position:relation; height:400px; overflow:auto;overflow :yes">
+        <p>{{ month }}月出勤明细</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>工 号</th>
+                <th>姓 名</th>
+                <th>出勤天数</th>
+                <th>缺勤天数</th>
+                <th>迟到次数</th>
+                <th>早退次数</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in admin_objects %}
+                <tr>
+                    <td>{{ item.member.identity }}   </td>
+                    <td>{{ item.member.name }} </td>
+                    <td>{{ item.up_days }} </td>
+                    <td>{{ item.down_days }} </td>
+                    <td>{{ item.late_times }} </td>
+                    <td>{{ item.early_times }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
